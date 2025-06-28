@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ComplaintController;
 
 Route::get('/', function () {
     return view('auth/login');
@@ -22,4 +23,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/complaint', [ComplaintController::class, 'create'])->name('complaint.create');
+Route::post('/complaint', [ComplaintController::class, 'store'])->name('complaint.store');
 require __DIR__.'/auth.php';
