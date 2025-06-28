@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\DonationController;
+
 
 Route::get('/', function () {
     return view('auth/login');
@@ -25,4 +27,6 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/complaint', [ComplaintController::class, 'create'])->name('complaint.create');
 Route::post('/complaint', [ComplaintController::class, 'store'])->name('complaint.store');
+
+Route::get('/donasi', [DonationController::class, 'index'])->name('donation.index');
 require __DIR__.'/auth.php';
