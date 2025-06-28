@@ -1,11 +1,11 @@
 <aside class="w-64 bg-gray-900 p-6 border-r border-gray-700 h-screen sticky top-0">
     <div class="flex items-center space-x-2 mb-10">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-        <a href="{{ route('home') }}" class="text-2xl font-bold focus:outline-none">FOUNDit</a>
+        <a href="{{ route('dashboard') }}" class="text-2xl font-bold focus:outline-none">FOUNDit</a>
     </div>
 
     <nav class="space-y-4">
-        <a href="{{ route('home') }}" class="flex items-center space-x-4 px-4 py-2 bg-gray-700 rounded-lg">
+        <a href="{{ route('dashboard') }}" class="flex items-center space-x-4 px-4 py-2 bg-gray-700 rounded-lg">
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
             <span>Beranda</span>
         </a>

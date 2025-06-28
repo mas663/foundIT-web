@@ -4,10 +4,10 @@
 @php
     // Menentukan kelas warna berdasarkan status barang
     $isFound = $item->status == 'found';
-    $mainBoxColor = $isFound ? 'bg-yellow-500 bg-opacity-20 text-yellow-300' : 'bg-green-500 bg-opacity-20 text-green-300';
-    $descBoxColor = $isFound ? 'bg-yellow-500 bg-opacity-20' : 'bg-green-500 bg-opacity-20';
-    $userBoxColor = $isFound ? 'bg-green-500 bg-opacity-20 text-green-300' : 'bg-yellow-500 bg-opacity-20 text-yellow-300';
-    $categoryTagColor = 'bg-yellow-500 bg-opacity-20 text-yellow-300'; // Warna kategori tetap sama di kedua desain
+    $mainBoxColor = $isFound ? 'bg-yellow-500  text-yellow-300' : 'bg-green-500  text-green-300';
+    $descBoxColor = $isFound ? 'bg-yellow-500 ' : 'bg-green-500 ';
+    $userBoxColor = $isFound ? 'bg-green-500  text-green-300' : 'bg-yellow-500  text-yellow-300';
+    $categoryTagColor = 'bg-yellow-500  text-yellow-300'; // Warna kategori tetap sama di kedua desain
 @endphp
 
 <div class="text-white">
@@ -42,7 +42,7 @@
         <div class="{{ $mainBoxColor }} p-6 rounded-xl shadow-md text-black text-lg space-y-4 border border-opacity-10 border-black">
             {{-- Lokasi --}}
             <div class="flex items-start gap-4">
-                <div class="bg-white bg-opacity-20 p-2 rounded-full shadow">
+                <div class="bg-white  p-2 rounded-full shadow">
                     <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5 14.5 7.6 14.5 9 13.4 11.5 12 11.5z"/>
                     </svg>
@@ -57,7 +57,7 @@
 
             {{-- Tanggal --}}
             <div class="flex items-start gap-4">
-                <div class="bg-white bg-opacity-20 p-2 rounded-full shadow">
+                <div class="bg-white  p-2 rounded-full shadow">
                     <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M7 10h5v5H7z" opacity=".3"/><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2
                         2v14c0 1.1.9 2 2 2h14c1.1 0
@@ -77,7 +77,7 @@
 
             {{-- Kategori --}}
             <div class="flex items-start gap-4">
-                <div class="bg-white bg-opacity-20 p-2 rounded-full shadow">
+                <div class="bg-white  p-2 rounded-full shadow">
                     <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20.5 9.5l-8.5 6-8.5-6v-5l8.5 6
                         8.5-6zM3 19.5v-9l8.5 6
