@@ -1,18 +1,10 @@
 <x-guest-layout>
-    {{-- Kita akan menimpa styling default dari guest-layout dengan menempatkan kode kita di sini --}}
-    {{-- Kode CSS dan font kustom bisa ditambahkan di head layout jika diperlukan, tapi untuk sekarang kita langsung implementasi HTML-nya --}}
 
-    {{-- Kartu Login Kustom Anda --}}
     <div class="w-full max-w-md p-12 space-y-8 bg-[#212C30] backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-700/50">
 
         {{-- Logo --}}
         <div class="text-center">
-            {{-- Menggunakan logo dari komponen Breeze untuk konsistensi, atau bisa diganti dengan h1 Anda --}}
-            <a href="/">
-                <h1 class="text-5xl font-extrabold text-white">
-                    FOUND<span class="bg-white text-black rounded-md px-2 py-1 text-4xl ml-1">it</span>
-                </h1>
-            </a>
+            <img src="{{ asset('images/logo.png') }}" alt="FOUNDit Logo" class="w-auto h-auto">
         </div>
 
         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -30,7 +22,7 @@
                     type="email"
                     name="email"
                     :value="old('email')"
-                    placeholder="nama@email.com"
+                    placeholder="Masukkan email Anda"
                     required
                     autofocus
                     autocomplete="username"
@@ -46,7 +38,7 @@
                     class="block mt-1 w-full px-4 py-3 bg-white/10 border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition"
                     type="password"
                     name="password"
-                    placeholder="••••••••"
+                    placeholder="Masukkan Password Anda"
                     required
                     autocomplete="current-password"
                 />

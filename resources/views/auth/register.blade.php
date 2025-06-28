@@ -4,11 +4,7 @@
 
         {{-- Logo --}}
         <div class="text-center">
-            <a href="/">
-                <h1 class="text-5xl font-extrabold text-white">
-                    FOUND<span class="bg-white text-black rounded-md px-2 py-1 text-4xl ml-1">it</span>
-                </h1>
-            </a>
+            <img src="{{ asset('images/logo.png') }}" alt="FOUNDit Logo" class="w-auto h-auto">
         </div>
 
         {{-- Form Daftar --}}
@@ -23,7 +19,7 @@
                     type="text"
                     name="name"
                     :value="old('name')"
-                    placeholder="John Doe"
+                    placeholder="Masukkan Nama lengkap Anda"
                     required
                     autofocus
                     autocomplete="name" />
@@ -38,7 +34,7 @@
                     type="email"
                     name="email"
                     :value="old('email')"
-                    placeholder="nama@email.com"
+                    placeholder="Masukkan email Anda"
                     required
                     autocomplete="username" />
                 <x-input-error :messages="$errors->get('email')" class="mt-2 text-red-400 text-sm" />
@@ -51,7 +47,7 @@
                     class="block mt-1 w-full px-4 py-3 bg-white/10 border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition"
                     type="password"
                     name="password"
-                    placeholder="••••••••"
+                    placeholder="Masukkan password Anda"
                     required
                     autocomplete="new-password" />
                 <x-input-error :messages="$errors->get('password')" class="mt-2 text-red-400 text-sm" />
@@ -64,7 +60,7 @@
                     class="block mt-1 w-full px-4 py-3 bg-white/10 border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition"
                     type="password"
                     name="password_confirmation"
-                    placeholder="••••••••"
+                    placeholder="Konfirmasi password Anda"
                     required
                     autocomplete="new-password" />
                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2 text-red-400 text-sm" />
