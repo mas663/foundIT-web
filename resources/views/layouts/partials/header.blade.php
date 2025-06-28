@@ -11,8 +11,10 @@
     </div>
 
     <div class="flex items-center space-x-4 ml-6 flex-shrink-0">
-        <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center">
-            <svg class="w-7 h-7 text-gray-900" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a5 5 0 00-5 5v1a5 5 0 0010 0V7a5 5 0 00-5-5zm-7 15a7 7 0 0114 0v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-1z" clip-rule="evenodd"/></svg>
-        </div>
+        <a href=/profile>
+            <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center">
+                <svg class="w-7 h-7 text-gray-900" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a5 5 0 00-5 5v1a5 5 0 0010 0V7a5 5 0 00-5-5zm-7 15a7 7 0 0114 0v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-1z" clip-rule="evenodd"/></svg>
+            </div>
+        </a>
     </div>
 </header>
