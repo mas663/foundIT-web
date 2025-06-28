@@ -26,13 +26,13 @@
         <h2 class="text-xl font-semibold mb-4">Baru saja ditemukan</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             @forelse($foundItems as $item)
-            <div class="bg-gray-800 rounded-lg overflow-hidden">
-                {{-- Perubahan: Menggunakan gambar dinamis dari database --}}
+            {{-- Perubahan: Menambahkan tag <a> --}}
+            <a href="{{ route('item.show', $item) }}" class="block bg-gray-800 rounded-lg overflow-hidden transform transition-transform hover:scale-105">
                 <img src="{{ $item->image ?? 'https://via.placeholder.com/300x200.png/1a202c/FFFFFF?text=' . urlencode($item->name) }}" alt="{{ $item->name }}" class="w-full h-32 object-cover">
                 <div class="p-4">
                     <h3 class="font-semibold truncate">{{ $item->name }}</h3>
                 </div>
-            </div>
+            </a>
             @empty
             <p class="col-span-full text-center text-gray-400">Tidak ada barang yang baru ditemukan.</p>
             @endforelse
@@ -43,13 +43,13 @@
         <h2 class="text-xl font-semibold mb-4">Baru saja hilang</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             @forelse($lostItems as $item)
-            <div class="bg-gray-800 rounded-lg overflow-hidden">
-                {{-- Perubahan: Menggunakan gambar dinamis dari database --}}
+            {{-- Perubahan: Menambahkan tag <a> --}}
+            <a href="{{ route('item.show', $item) }}" class="block bg-gray-800 rounded-lg overflow-hidden transform transition-transform hover:scale-105">
                 <img src="{{ $item->image ?? 'https://via.placeholder.com/300x200.png/1a202c/FFFFFF?text=' . urlencode($item->name) }}" alt="{{ $item->name }}" class="w-full h-32 object-cover">
                 <div class="p-4">
                     <h3 class="font-semibold truncate">{{ $item->name }}</h3>
                 </div>
-            </div>
+            </a>
              @empty
             <p class="col-span-full text-center text-gray-400">Tidak ada barang yang baru hilang.</p>
             @endforelse
