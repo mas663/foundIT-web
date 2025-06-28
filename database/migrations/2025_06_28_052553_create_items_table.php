@@ -20,6 +20,12 @@ return new class extends Migration
             $table->date('date');
             $table->string('location');
             $table->text('description')->nullable();
+
+            // Perubahan: Menambahkan kolom baru
+            $table->string('image')->nullable(); // URL atau path gambar
+            $table->json('details')->nullable(); // Detail spesifik seperti plat nomor
+            $table->boolean('is_featured')->default(false); // Untuk fitur pengumuman
+
             $table->timestamps();
         });
     }
