@@ -24,25 +24,69 @@ class ItemSeeder extends Seeder
             ]);
         }
 
-        // Data contoh untuk items
+        Item::query()->delete();
+
         $itemsData = [
+            // BARANG HILANG (LOST)
             [
-                'name' => 'Motor Vario 125',
+                'name' => 'Motor Vario 125 Biru',
                 'status' => 'lost',
                 'category' => 'Kendaraan',
-                'location' => 'Surabaya',
-                'description' => 'Dicari motor vario 125 warna biru dongker, hilang di area parkir mall.',
-                'image' => 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=2070&auto=format&fit=crop',
+                'location' => 'Pusat Perbelanjaan Surabaya',
+                'description' => 'Telah hilang sebuah motor Honda Vario 125 berwarna biru dongker metalik di area parkir sebuah pusat perbelanjaan, ciri khusus ada stiker kecil di spakbor depan.',
+                'image' => 'https://ik.imagekit.io/zlt25mb52fx/ahmcdn/uploads/article/meta/1-ahm-advance-matte-blue-01-2-17102021-115042.jpg',
                 'details' => json_encode(['plat_nomor' => 'L 1234 ABC']),
-                'is_featured' => true, // Item ini akan jadi pengumuman
+                'is_featured' => true,
             ],
+            [
+                'name' => 'iPhone 11 Ungu',
+                'status' => 'lost',
+                'category' => 'Elektronik',
+                'location' => 'Taman Bungkul',
+                'description' => 'Kehilangan sebuah iPhone 11 dengan case transparan yang sedikit menguning, terakhir kali terlihat di bangku taman dekat air mancur saat sore hari.',
+                'image' => 'https://cdn.jagofon.com/product/5vDJfyUj4Em0Vmq6LQLmwlMakEjMKJrvKVZgNNhQ.jpeg',
+                'details' => null,
+                'is_featured' => false,
+            ],
+            [
+                'name' => 'Kacamata Minus Bingkai Hitam',
+                'status' => 'lost',
+                'category' => 'Aksesoris',
+                'location' => 'Bioskop Tunjungan Plaza',
+                'description' => 'Sebuah kacamata minus dengan bingkai plastik tebal berwarna hitam telah hilang, kemungkinan terjatuh di dalam bioskop saat menonton film malam.',
+                'image' => 'https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//113/MTA-54836897/no_brand_kacamata_minus__warna_hitam_-0-50_sampai_-4-00_rabun_jauh_frame_besi_kotak_kecil_full01_oenr2iwa.jpg',
+                'details' => json_encode(['merek' => 'Oakley']),
+                'is_featured' => false,
+            ],
+             [
+                'name' => 'Flashdisk Sandisk 64GB',
+                'status' => 'lost',
+                'category' => 'Elektronik',
+                'location' => 'Perpustakaan ITS',
+                'description' => 'Kehilangan flashdisk merk Sandisk berwarna hitam-merah berisi file-file tugas akhir yang sangat penting, kemungkinan tertinggal di komputer perpustakaan.',
+                'image' => 'https://datascripmall.id/media/webp_image/catalog/product/cache/95a5307f46190cd7a50cf0819ebeb220/2/0/20210702_210354.webp',
+                'details' => null,
+                'is_featured' => false,
+            ],
+            [
+                'name' => 'Tumbler Corkcicle Hitam',
+                'status' => 'lost',
+                'category' => 'Lainnya',
+                'location' => 'Lapangan Basket Unair',
+                'description' => 'Telah kehilangan sebuah botol minum atau tumbler merk Corkcicle berwarna hitam doff, terakhir diletakkan di meja dekat lapangan basket.',
+                'image' => 'https://down-id.img.susercontent.com/file/id-11134207-7r992-llelvp3rulplaa',
+                'details' => null,
+                'is_featured' => false,
+            ],
+
+            // BARANG DITEMUKAN (FOUND)
             [
                 'name' => 'TWS merk QCY',
                 'status' => 'found',
                 'category' => 'Elektronik',
-                'location' => 'Perpustakaan Kampus',
-                'description' => 'Ditemukan TWS merk QCY warna putih di meja baca.',
-                'image' => 'https://images.unsplash.com/photo-1610438235354-a6ae5528385c?q=80&w=1935&auto=format&fit=crop',
+                'location' => 'Perpustakaan Kampus ITS',
+                'description' => 'Telah ditemukan sebuah case TWS nirkabel berwarna putih dari merk QCY di salah satu meja baca area perpustakaan kampus.',
+                'image' => 'https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//100/MTA-93814534/qcy_true_wireless_earbuds_qcy_t13_full01_f13293ca.jpg',
                 'details' => null,
                 'is_featured' => false,
             ],
@@ -50,19 +94,19 @@ class ItemSeeder extends Seeder
                 'name' => 'Dompet atas nama Amir',
                 'status' => 'found',
                 'category' => 'Dompet',
-                'location' => 'Kantin',
-                'description' => 'Ditemukan dompet kulit warna coklat beserta KTP atas nama Amir.',
-                'image' => 'https://images.unsplash.com/photo-1543360223-545239743c7b?q=80&w=2070&auto=format&fit=crop',
+                'location' => 'Kantin Pusat ITS',
+                'description' => 'Ditemukan sebuah dompet kulit berwarna coklat yang sudah sedikit usang, di dalamnya terdapat KTP dan SIM C atas nama Amir.',
+                'image' => 'https://down-id.img.susercontent.com/file/id-11134207-7r98s-ltkgerjwrf1y1e',
                 'details' => json_encode(['nama_pemilik' => 'Amir']),
                 'is_featured' => false,
             ],
             [
-                'name' => 'Kunci motor honda',
+                'name' => 'Kunci motor Honda',
                 'status' => 'found',
                 'category' => 'Kunci',
-                'location' => 'Halte Bus',
-                'description' => 'Kunci motor dengan gantungan karakter.',
-                'image' => 'https://images.unsplash.com/photo-1583204979318-24be2f623c21?q=80&w=2070&auto=format&fit=crop',
+                'location' => 'Halte Bus Bundaran ITS',
+                'description' => 'Sebuah kunci motor Honda dengan gantungan kunci karakter Spongebob ditemukan tergeletak di lantai dekat halte bus.',
+                'image' => 'https://down-id.img.susercontent.com/file/a44e991b826e567e9bca7aab703308e7',
                 'details' => null,
                 'is_featured' => false,
             ],
@@ -70,26 +114,51 @@ class ItemSeeder extends Seeder
                 'name' => 'HP POCO M3 Pro',
                 'status' => 'found',
                 'category' => 'Elektronik',
-                'location' => 'Kelas 304',
-                'description' => 'Ditemukan HP POCO M3 Pro warna biru.',
-                'image' => 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=2068&auto=format&fit=crop',
+                'location' => 'Ruang Kelas 304 Departemen Sistem Informasi',
+                'description' => 'Telah ditemukan sebuah ponsel POCO M3 Pro berwarna biru dalam kondisi menyala namun terkunci, tertinggal di ruang kelas 304.',
+                'image' => 'https://i02.appmifile.com/444_comments_in/08/07/2021/4f838b3e6b49e3604f0dadb3d10a256f.jpg',
                 'details' => null,
                 'is_featured' => false,
             ],
+            [
+                'name' => 'Kartu ATM BRI',
+                'status' => 'found',
+                'category' => 'Dokumen',
+                'location' => 'Mesin ATM dekat Gerbang Utama',
+                'description' => 'Ditemukan sebuah kartu debit atau ATM Bank BRI yang sepertinya baru saja keluar dari mesin ATM dan tidak diambil oleh pemiliknya.',
+                'image' => 'https://asset.kompas.com/crops/b_GlS6aCs985jTUUWUO4ynP0oHA=/49x40:656x445/750x500/data/photo/2022/05/13/627e2d26e2139.jpg',
+                'details' => null,
+                'is_featured' => false,
+            ],
+            [
+                'name' => 'STNK atas nama Putri',
+                'status' => 'found',
+                'category' => 'Dokumen',
+                'location' => 'Area Parkir Departemen Teknik Informatika',
+                'description' => 'Telah ditemukan sebuah STNK untuk kendaraan sepeda motor yang tergeletak di area parkir, STNK tersebut atas nama Putri.',
+                'image' => 'https://www.astra-daihatsu.id/_next/image?url=https%3A%2F%2Fdsoodysseusstprod.blob.core.windows.net%2Fstrapi-media%2Fassets%2Fsys_master_media_h06_h09_8822554820638_Cara_Mengurus_STNK_yang_Hilang_atau_Rusak_Dengan_Mudah_2023_2d9384aedd.jpg&w=3840&q=75',
+                'details' => json_encode(['nama_pemilik' => 'Putri']),
+                'is_featured' => false,
+            ],
              [
-                'name' => 'Iphone 11 warna ungu',
-                'status' => 'lost',
-                'category' => 'Elektronik',
-                'location' => 'Taman Kota',
-                'description' => 'Hilang Iphone 11 warna ungu, terakhir digunakan di sekitar bangku taman.',
-                'image' => 'https://images.unsplash.com/photo-1606787366850-de6330128214?q=80&w=2070&auto=format&fit=crop',
+                'name' => 'Jam tangan Casio',
+                'status' => 'found',
+                'category' => 'Aksesoris',
+                'location' => 'Pinggir Lapangan Futsal',
+                'description' => 'Ditemukan sebuah jam tangan digital merk Casio berwarna hitam, tergeletak di pinggir lapangan futsal saat sore hari.',
+                'image' => 'https://media.dinomarket.com/docs/imgTD/2022-08/_SMine_1659346028122_010822160808_ll.jpg',
                 'details' => null,
                 'is_featured' => false,
             ]
         ];
 
         foreach ($itemsData as $item) {
-            Item::create(array_merge($item, ['user_id' => $user->id, 'date' => now()]));
+            Item::create(array_merge($item, [
+                'user_id' => $user->id,
+                'date' => now()->subDays(rand(1,30)),
+                'created_at' => now(),
+                'updated_at' => now()
+            ]));
         }
     }
 }
