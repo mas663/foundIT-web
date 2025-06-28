@@ -22,11 +22,11 @@ class HomeController extends Controller
             $announcement = Item::where('status', 'lost')->latest()->first();
         }
 
-        // Mengambil 4 item terbaru yang ditemukan
-        $foundItems = Item::where('status', 'found')->latest()->take(4)->get();
+        // Mengambil semua item ditemukan
+        $foundItems = Item::where('status', 'found')->latest()->get();
 
-        // Mengambil 4 item terbaru yang hilang
-        $lostItems = Item::where('status', 'lost')->latest()->take(4)->get();
+        // Mengambil semua item hilang
+        $lostItems = Item::where('status', 'lost')->latest()->get();
 
         return view('home', [
             'announcement' => $announcement,
