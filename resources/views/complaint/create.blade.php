@@ -10,9 +10,9 @@
                 <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-6 mx-auto">
                     <svg class="w-16 h-16 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                 </div>
-                <h2 class="text-2xl font-bold mb-2">Saran berhasil dikirim!</h2>
+                <h2 class="text-2xl font-bold mb-2">Komplain berhasil dikirim!</h2>
                 <p class="text-gray-400">
-                    Saran yang kamu beri berhasil dikirim, tunggu balasan dari pihak kami ya. Terima kasih atas sarannya!
+                    Komplain berhasil terkirim, tunggu balasan dari pihak kami ya. Terima kasih atas kritik atau sarannya!
                 </p>
                 <a href="{{ route('dashboard') }}" class="mt-8 inline-block px-8 py-3 bg-yellow-500 text-gray-900 font-bold rounded-lg hover:bg-yellow-600 transition-colors">
                     Kembali ke Beranda
