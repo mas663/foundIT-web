@@ -51,7 +51,7 @@
             <hr class="border-t border-black border-opacity-50" />
 
             {{-- Isi Deskripsi --}}
-            <p class="text-black text-lg leading-relaxed whitespace-pre-wrap">
+            <p class="text-black text-lg leading-relaxed text-justify">
                 {{ $item->description }}
             </p>
         </div>

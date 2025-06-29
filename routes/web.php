@@ -32,3 +32,5 @@ Route::get('/donasi', [DonationController::class, 'index'])->name('donation.inde
 require __DIR__.'/auth.php';
 
 Route::get('/faq', [FaqController::class, 'index'])->name('faq.chat');
+Route::get('/items/search', [ItemController::class, 'search'])->name('items.search');
+Route::get('/items/{item}', [ItemController::class, 'show'])->name('items.show');

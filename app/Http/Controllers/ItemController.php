@@ -19,4 +19,24 @@ class ItemController extends Controller
         // Jika tidak ditemukan, akan menampilkan halaman 404.
         return view('items.show', compact('item'));
     }
+
+    /**
+     * Pencarian barang hilang dan ditemukan.
+     */
+    public function search(Request $request)
+    {
+        $query = $request->input('q');
+        $items = Item::query()
+            ->when($query, function ($q) use ($query) {
+                $q->where('name', 'like', "%$query%")
+                  ->orWhere('location', 'like', "%$query%")
+                  ->orWhere('description', 'like', "%$query%")
+                  ->orWhere('category', 'like', "%$query%")
+                  ->orWhere('status', 'like', "%$query%")
+                ;
+            })
+            ->orderByDesc('created_at')
+            ->paginate(12);
+        return view('items.search', compact('items'));
+    }
 }
