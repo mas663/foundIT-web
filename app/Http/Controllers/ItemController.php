@@ -39,4 +39,30 @@ class ItemController extends Controller
             ->paginate(12);
         return view('items.search', compact('items'));
     }
+
+    /**
+     * Menampilkan katalog barang berdasarkan kategori.
+     */
+    public function katalog(Request $request)
+    {
+        $categories = Item::query()->distinct()->pluck('category')->filter()->unique()->values();
+        $query = Item::query();
+        if ($request->filled('category')) {
+            $query->where('category', $request->category);
+        }
+        if ($request->filled('status')) {
+            $query->where('status', $request->status);
+        }
+        if ($request->filled('date')) {
+            $query->whereDate('date', $request->date);
+        }
+        if ($request->filled('month')) {
+            $query->whereMonth('date', $request->month);
+        }
+        if ($request->filled('year')) {
+            $query->whereYear('date', $request->year);
+        }
+        $items = $query->orderByDesc('created_at')->paginate(12);
+        return view('items.katalog', compact('items', 'categories'));
+    }
 }

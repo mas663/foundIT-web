@@ -15,6 +15,9 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
+    Route::get('/katalog', [ItemController::class, 'index'])->name('item.index');
+    Route::get('/katalog', [ItemController::class, 'katalog'])->name('items.katalog');
+
     // Item
     Route::get('/item/{item}', [ItemController::class, 'show'])->name('item.show');
 });
