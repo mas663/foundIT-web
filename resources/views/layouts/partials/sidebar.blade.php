@@ -18,10 +18,16 @@
             <span>Katalog</span>
         </a>
 
+        <a href="{{ route('lapor.index') }}" class="flex flex-col items-center px-4 py-2 rounded-lg transition-colors {{ request()->routeIs('lapor.index') ? 'bg-gray-700' : 'hover:bg-gray-700' }}">
+            <img src="{{ asset('images/lapor.png') }}" alt="Lapor" class="w-10 h-10 mb-1">
+            <span>Lapor</span>
+        </a>
+
+
         {{-- Menu Lapor --}}
         <a href="{{ route('complaint.create') }}" class="flex flex-col items-center px-4 py-2 rounded-lg transition-colors {{ request()->routeIs('complaint.create') ? 'bg-gray-700' : 'hover:bg-gray-700' }}">
             <img src="{{ asset('images/lapor.png') }}" alt="Lapor" class="w-10 h-10 mb-1">
-            <span>Lapor</span>
+            <span>Komplain</span>
         </a>
 
         {{-- Menu Pesan --}}

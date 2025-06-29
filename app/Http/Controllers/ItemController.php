@@ -65,4 +65,36 @@ class ItemController extends Controller
         $items = $query->orderByDesc('created_at')->paginate(12);
         return view('items.katalog', compact('items', 'categories'));
     }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'date' => 'nullable|date',
+            'location' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'kontak' => 'required|url|starts_with:https://wa.me/',
+            'category' => 'nullable|string|max:255',
+            'details' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'status' => 'required|in:lost,found',
+        ]);
+
+        $validated['user_id'] = auth()->id();
+
+
+        // Simpan gambar jika ada
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('uploads', 'public');
+            $validated['image'] = '/storage/' . $path; // biar bisa langsung diakses public
+        }
+
+        Item::create($validated);
+
+
+        return redirect()->route('items.katalog')->with('success', 'Barang berhasil dilaporkan!');
+
+    }
+
+
 }
