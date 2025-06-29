@@ -37,6 +37,7 @@ class ItemSeeder extends Seeder
                 'image' => 'https://ik.imagekit.io/zlt25mb52fx/ahmcdn/uploads/article/meta/1-ahm-advance-matte-blue-01-2-17102021-115042.jpg',
                 'details' => json_encode(['plat_nomor' => 'L 1234 ABC']),
                 'is_featured' => true,
+                'kontak' => 'https://wa.me/6281359449097',
             ],
             [
                 'name' => 'iPhone 11 Ungu',
@@ -47,6 +48,7 @@ class ItemSeeder extends Seeder
                 'image' => 'https://cdn.jagofon.com/product/5vDJfyUj4Em0Vmq6LQLmwlMakEjMKJrvKVZgNNhQ.jpeg',
                 'details' => null,
                 'is_featured' => false,
+                'kontak' => 'https://wa.me/6282331346101',
             ],
             [
                 'name' => 'Kacamata Minus Bingkai Hitam',
@@ -57,6 +59,7 @@ class ItemSeeder extends Seeder
                 'image' => 'https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//113/MTA-54836897/no_brand_kacamata_minus__warna_hitam_-0-50_sampai_-4-00_rabun_jauh_frame_besi_kotak_kecil_full01_oenr2iwa.jpg',
                 'details' => json_encode(['merek' => 'Oakley']),
                 'is_featured' => false,
+                'kontak' => 'https://wa.me/6281217212964',
             ],
              [
                 'name' => 'Flashdisk Sandisk 64GB',
@@ -67,6 +70,7 @@ class ItemSeeder extends Seeder
                 'image' => 'https://datascripmall.id/media/webp_image/catalog/product/cache/95a5307f46190cd7a50cf0819ebeb220/2/0/20210702_210354.webp',
                 'details' => null,
                 'is_featured' => false,
+                'kontak' => 'https://wa.me/6285706305105',
             ],
             [
                 'name' => 'Tumbler Corkcicle Hitam',
@@ -77,6 +81,7 @@ class ItemSeeder extends Seeder
                 'image' => 'https://down-id.img.susercontent.com/file/id-11134207-7r992-llelvp3rulplaa',
                 'details' => null,
                 'is_featured' => false,
+                'kontak' => 'https://wa.me/6285695175726',
             ],
 
             // BARANG DITEMUKAN (FOUND)
@@ -89,6 +94,7 @@ class ItemSeeder extends Seeder
                 'image' => 'https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//100/MTA-93814534/qcy_true_wireless_earbuds_qcy_t13_full01_f13293ca.jpg',
                 'details' => null,
                 'is_featured' => false,
+                'kontak' => 'https://wa.me/6281336464103',
             ],
             [
                 'name' => 'Dompet atas nama Amir',
@@ -99,6 +105,7 @@ class ItemSeeder extends Seeder
                 'image' => 'https://down-id.img.susercontent.com/file/id-11134207-7r98s-ltkgerjwrf1y1e',
                 'details' => json_encode(['nama_pemilik' => 'Amir']),
                 'is_featured' => false,
+                'kontak' => 'https://wa.me/6283146186053',
             ],
             [
                 'name' => 'Kunci motor Honda',
@@ -109,6 +116,7 @@ class ItemSeeder extends Seeder
                 'image' => 'https://down-id.img.susercontent.com/file/a44e991b826e567e9bca7aab703308e7',
                 'details' => null,
                 'is_featured' => false,
+                'kontak' => 'https://wa.me/6281373218995',
             ],
             [
                 'name' => 'HP POCO M3 Pro',
@@ -119,6 +127,7 @@ class ItemSeeder extends Seeder
                 'image' => 'https://i02.appmifile.com/444_comments_in/08/07/2021/4f838b3e6b49e3604f0dadb3d10a256f.jpg',
                 'details' => null,
                 'is_featured' => false,
+                'kontak' => 'https://wa.me/6282132213370',
             ],
             [
                 'name' => 'Kartu ATM BRI',
@@ -129,6 +138,7 @@ class ItemSeeder extends Seeder
                 'image' => 'https://asset.kompas.com/crops/b_GlS6aCs985jTUUWUO4ynP0oHA=/49x40:656x445/750x500/data/photo/2022/05/13/627e2d26e2139.jpg',
                 'details' => null,
                 'is_featured' => false,
+                'kontak' => 'https://wa.me/6281312088430',
             ],
             [
                 'name' => 'STNK atas nama Putri',
@@ -139,6 +149,7 @@ class ItemSeeder extends Seeder
                 'image' => 'https://www.astra-daihatsu.id/_next/image?url=https%3A%2F%2Fdsoodysseusstprod.blob.core.windows.net%2Fstrapi-media%2Fassets%2Fsys_master_media_h06_h09_8822554820638_Cara_Mengurus_STNK_yang_Hilang_atau_Rusak_Dengan_Mudah_2023_2d9384aedd.jpg&w=3840&q=75',
                 'details' => json_encode(['nama_pemilik' => 'Putri']),
                 'is_featured' => false,
+                'kontak' => 'https://wa.me/6281359449097',
             ],
              [
                 'name' => 'Jam tangan Casio',
@@ -149,6 +160,7 @@ class ItemSeeder extends Seeder
                 'image' => 'https://media.dinomarket.com/docs/imgTD/2022-08/_SMine_1659346028122_010822160808_ll.jpg',
                 'details' => null,
                 'is_featured' => false,
+                'kontak' => 'https://wa.me/6282331346101',
             ]
         ];
 

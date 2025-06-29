@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('date');
             $table->string('location');
             $table->text('description')->nullable();
+            $table->string('kontak')->nullable(); // Kolom kontak ditambahkan
 
             // Perubahan: Menambahkan kolom baru
             $table->string('image')->nullable(); // URL atau path gambar
