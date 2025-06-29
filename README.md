@@ -1,12 +1,18 @@
-<!-- Setup Database -->
+How to run FoundIt on Local
+**Requirement**
+- Composer setup
+- Node.js
 
-jalanin di local
+1.  Server:
+    - Jika memakai Xampp, buka dan nyalakan XAMPP
+    - Jika memakai MySQL: 1) start mysql, 2) klik "admin"
 
--   Buka XAMPP / MySQL (start mysql -> klik "admin")
--   Buat database foundit_db
--   Config file .env:
-    DB_CONNECTION=mysql
-    DB_DATABASE=foundit_db
--   Jalankan :
-    php artisan key:generate (Pembuatan tabel pada db)
-    php artisan migrate --seed (untuk data dummy)
+2.  Buat database foundit_db
+3.  Jalankan :
+    - composer install
+    - cp .env.example .env
+    - php artisan key:generate 
+    - php artisan migrate:fresh --seed (untuk data dummy)
+    - php artisan serve
+    - npm install
+    - npm run dev dan klik link bagian APP_URL
