@@ -4,7 +4,7 @@
     <div class="mb-8">
         <h2 class="text-2xl font-bold mb-4">Pengumuman</h2>
         @if($announcement)
-        <div class="bg-gray-800 rounded-lg overflow-hidden relative">
+        <a href="{{ route('item.show', $announcement) }}" class="block bg-gray-800 rounded-lg overflow-hidden relative group transition-transform hover:scale-105">
             {{-- Perubahan: Menggunakan gambar dinamis dari database --}}
             <img src="{{ $announcement->image ?? 'https://via.placeholder.com/800x400.png/1a202c/FFFFFF?text=Gambar+Tidak+Tersedia' }}" alt="{{ $announcement->name }}" class="w-full h-64 object-cover">
             <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black to-transparent w-full">
@@ -14,7 +14,7 @@
                     <p class="text-gray-400">Plat nomor: {{ json_decode($announcement->details)->plat_nomor }}</p>
                 @endif
             </div>
-        </div>
+        </a>
         @else
         <div class="bg-gray-800 rounded-lg p-6 text-center">
             <p>Tidak ada pengumuman saat ini.</p>
