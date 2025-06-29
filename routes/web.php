@@ -6,7 +6,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\DonationController;
-
+use App\Http\Controllers\FaqController;
 
 Route::get('/', function () {
     return view('auth/login');
@@ -30,3 +30,5 @@ Route::post('/complaint', [ComplaintController::class, 'store'])->name('complain
 
 Route::get('/donasi', [DonationController::class, 'index'])->name('donation.index');
 require __DIR__.'/auth.php';
+
+Route::get('/faq', [FaqController::class, 'index'])->name('faq.chat');
