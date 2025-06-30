@@ -13,7 +13,8 @@ How to run FoundIt on Local
     - composer install
     - cp .env.example .env
     - php artisan key:generate 
-    - php artisan migrate:fresh --seed (untuk data dummy)
+    - php artisan migrate:fresh
     - php artisan serve
+    - php artisan storage:link (upload gambar)
     - npm install
     - npm run dev dan klik link bagian APP_URL
