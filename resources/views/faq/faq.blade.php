@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div x-data="chatFaq()" class="max-w-2xl mx-auto bg-[#182328] text-white rounded-lg shadow h-[500px] flex flex-col">
+<div x-data="chatFaq()" class="w-full max-w-5xl mx-auto bg-[#182328] text-white rounded-lg shadow h-[80vh] flex flex-col">
 
     <!-- Header -->
     <div class="p-4 border-b border-gray-700">
@@ -12,7 +12,7 @@
     <div id="chatBox" class="flex-1 overflow-y-auto px-4 py-2 space-y-2">
         <template x-for="(message, index) in messages" :key="index">
             <div class="flex" :class="message.from === 'user' ? 'justify-end' : 'justify-start'">
-                <div class="px-4 py-2 rounded-lg max-w-xs text-sm"
+                <div class="px-4 py-2 rounded-lg max-w-sm text-sm"
                      :class="message.from === 'user' ? 'bg-blue-600' : 'bg-gray-700'">
                     <span x-text="message.text"></span>
                 </div>
@@ -39,7 +39,7 @@ function chatFaq() {
     return {
         userInput: '',
         messages: [
-            { from: 'bot', text: '👋 Hello! Saya adalah asisten elektronik FOUNDIT yang akan membantu menjawab beberapa pertanyaan anda , Tuliskan nomor pertanyaang yang ingin anda tanyakann ! ' },
+            { from: 'bot', text: '👋 Hello! Saya adalah asisten elektronik FOUNDIT yang akan membantu menjawab beberapa pertanyaan anda , Tuliskan nomor pertanyaang yang ingin anda tanyakan ! ' },
             @foreach ($faq as $i => $item)
                 { from: 'bot', text: '{{ ($i+1) . ". " . $item["q"] }}' },
             @endforeach
