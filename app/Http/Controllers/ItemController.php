@@ -69,6 +69,7 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'user_id' => auth()->id() ?? 1,
             'name' => 'required|string|max:255',
             'date' => 'nullable|date',
             'location' => 'required|string|max:255',
