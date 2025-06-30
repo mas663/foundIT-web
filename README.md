@@ -14,6 +14,7 @@ How to run FoundIt on Local
     - cp .env.example .env
     - php artisan key:generate 
     - php artisan migrate:fresh
+    - php artisan migrate:fresh --seed (buat data dummy)
     - php artisan serve
     - php artisan storage:link (upload gambar)
     - npm install
