@@ -51,8 +51,16 @@
 
                 <div class="mb-4">
                     <label class="block mb-2">Kategori</label>
-                    <input type="text" name="category" placeholder="Kategori barang"
-                           class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none" required>
+                    <select name="category" class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none" required>
+                        <option value="">Pilih kategori</option>
+                        <option value="Kendaraan">Kendaraan</option>
+                        <option value="Elektronik">Elektronik</option>
+                        <option value="Aksesoris">Aksesoris</option>
+                        <option value="Perlengkapan">Perlengkapan</option>
+                        <option value="Kunci">Kunci</option>
+                        <option value="Dokumen">Dokumen</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
                 </div>
 
                 <div class="mb-4">
