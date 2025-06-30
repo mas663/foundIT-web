@@ -33,7 +33,7 @@
         {{-- Menu Pesan --}}
         <a href="/faq" class="flex flex-col items-center px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
             <img src="{{ asset('images/pesan.png') }}" alt="Chat FAQ" class="w-10 h-10 mb-1">
-            <span>Pesan</span>
+            <span>FAQ</span>
         </a>
 
         {{-- Menu Donasi --}}

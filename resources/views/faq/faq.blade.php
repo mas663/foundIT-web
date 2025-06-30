@@ -39,7 +39,7 @@ function chatFaq() {
     return {
         userInput: '',
         messages: [
-            { from: 'bot', text: '👋 Hello! I’m your FAQ assistant. Type the number of a question below to get started:' },
+            { from: 'bot', text: '👋 Hello! Saya adalah asisten elektronik FOUNDIT yang akan membantu menjawab beberapa pertanyaan anda , Tuliskan nomor pertanyaang yang ingin anda tanyakann ! ' },
             @foreach ($faq as $i => $item)
                 { from: 'bot', text: '{{ ($i+1) . ". " . $item["q"] }}' },
             @endforeach
@@ -55,7 +55,7 @@ function chatFaq() {
             if (!isNaN(index) && index >= 1 && index <= this.faqs.length) {
                 this.messages.push({ from: 'bot', text: this.faqs[index - 1] });
             } else {
-                this.messages.push({ from: 'bot', text: "❓ Sorry, I don't recognize that number. Try one listed above." });
+                this.messages.push({ from: 'bot', text: "❓ Maaf saya tidak mengenali input anda , coba pilih salah satu pertanyaan diatas ! ." });
             }
 
             this.userInput = '';
