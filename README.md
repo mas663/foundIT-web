@@ -11,11 +11,11 @@ How to run FoundIt on Local
 2.  Buat database foundit_db
 3.  Jalankan :
     - composer install
-    - cp .env.example .env
+    - cp .env.example .env (setting nama database, db host, db port, db password)
     - php artisan key:generate 
     - php artisan migrate:fresh
     - php artisan migrate:fresh --seed (buat data dummy)
     - php artisan serve
-    - php artisan storage:link (upload gambar)
+    - php artisan storage:link (upload gambar di lapor)
     - npm install
     - npm run dev dan klik link bagian APP_URL
