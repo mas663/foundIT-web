@@ -16,6 +16,6 @@ How to run FoundIt on Local
     - php artisan migrate:fresh
     - php artisan migrate:fresh --seed (buat data dummy)
     - php artisan serve
-    - php artisan storage:link (upload gambar)
+    - php artisan storage:link (upload gambar di lapor)
     - npm install
     - npm run dev dan klik link bagian APP_URL
