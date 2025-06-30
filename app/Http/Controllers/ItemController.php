@@ -69,7 +69,7 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'user_id' => auth()->id() ?? 1,
+            'user_id' => 'nullable|exists:users,id',
             'name' => 'required|string|max:255',
             'date' => 'nullable|date',
             'location' => 'required|string|max:255',
@@ -81,7 +81,7 @@ class ItemController extends Controller
             'status' => 'required|in:lost,found',
         ]);
 
-        $validated['user_id'] = auth()->id();
+        $validated['user_id'] = auth()->id() ?? 1;
 
 
         // Simpan gambar jika ada
