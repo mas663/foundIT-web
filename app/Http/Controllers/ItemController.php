@@ -86,22 +86,17 @@ class ItemController extends Controller
             'status' => 'required|in:lost,found',
         ]);
 
-        $validated['category_id'] = $validated['category'] ?? null;
-        unset($validated['category']);
-
-        $validated['user_id'] = auth()->id() ?? 1;
-
-        // Simpan gambar jika ada
+        $item = new Item();
+        $item->fill($validated);
+        $item->user_id = auth()->id() ?? 1;
+        
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('uploads', 'public');
-            $validated['image'] = '/storage/' . $path; // biar bisa langsung diakses public
+            $item->image = '/storage/' . $path;
         }
 
-        Item::create($validated);
+        $item->save();
 
         return redirect()->route('items.katalog')->with('success', 'Barang berhasil dilaporkan!');
-
     }
-
-
 }

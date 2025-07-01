@@ -39,7 +39,7 @@
                 </div>
                 <div class="mb-4">
                     <label class="block mb-2">Kategori</label>
-                    <select name="category" id="category" class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none" required>
+                    <select name="category_id" id="category_id" class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none" required>
                         <option value="">Pilih kategori</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
