@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class LaporController extends Controller
@@ -13,11 +15,15 @@ class LaporController extends Controller
 
     public function kehilangan()
     {
-        return view('lapor.kehilangan');
+        $categories = Category::all();
+
+        return view('lapor.kehilangan', compact('categories'));
     }
 
     public function penemuan()
     {
-        return view('lapor.penemuan');
+        $categories = Category::all();
+
+        return view('lapor.penemuan', compact('categories'));
     }
 }

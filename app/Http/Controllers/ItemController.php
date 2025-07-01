@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -15,8 +16,8 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        // Laravel's route model binding akan otomatis mencari item berdasarkan ID.
-        // Jika tidak ditemukan, akan menampilkan halaman 404.
+        $item->load('category');
+
         return view('items.show', compact('item'));
     }
 
@@ -26,17 +27,19 @@ class ItemController extends Controller
     public function search(Request $request)
     {
         $query = $request->input('q');
-        $items = Item::query()
+        $items = Item::with('category')
             ->when($query, function ($q) use ($query) {
                 $q->where('name', 'like', "%$query%")
                   ->orWhere('location', 'like', "%$query%")
                   ->orWhere('description', 'like', "%$query%")
-                  ->orWhere('category', 'like', "%$query%")
                   ->orWhere('status', 'like', "%$query%")
-                ;
+                  ->orWhereHas('category', function ($q2) use ($query) {
+                    $q2->where('name', 'like', "%$query%");
+                });
             })
             ->orderByDesc('created_at')
             ->paginate(12);
+
         return view('items.search', compact('items'));
     }
 
@@ -45,10 +48,12 @@ class ItemController extends Controller
      */
     public function katalog(Request $request)
     {
-        $categories = Item::query()->distinct()->pluck('category')->filter()->unique()->values();
-        $query = Item::query();
+        $categories = Category::all();
+
+        $query = Item::with('category');
+
         if ($request->filled('category')) {
-            $query->where('category', $request->category);
+            $query->where('category_id', $request->category);
         }
         if ($request->filled('status')) {
             $query->where('status', $request->status);
@@ -75,14 +80,16 @@ class ItemController extends Controller
             'location' => 'required|string|max:255',
             'description' => 'nullable|string',
             'kontak' => 'required|url|starts_with:https://wa.me/',
-            'category' => 'nullable|string|max:255',
+            'category_id' => 'nullable|exists:categories,id',
             'details' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'status' => 'required|in:lost,found',
         ]);
 
-        $validated['user_id'] = auth()->id() ?? 1;
+        $validated['category_id'] = $validated['category'] ?? null;
+        unset($validated['category']);
 
+        $validated['user_id'] = auth()->id() ?? 1;
 
         // Simpan gambar jika ada
         if ($request->hasFile('image')) {
@@ -91,7 +98,6 @@ class ItemController extends Controller
         }
 
         Item::create($validated);
-
 
         return redirect()->route('items.katalog')->with('success', 'Barang berhasil dilaporkan!');
 

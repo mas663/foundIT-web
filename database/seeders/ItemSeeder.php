@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Item;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 class ItemSeeder extends Seeder
@@ -157,6 +158,19 @@ class ItemSeeder extends Seeder
         ];
 
         foreach ($items as $item) {
+            // Cari ID kategori berdasarkan nama kategori
+            $category = Category::where('name', $item['category'])->first();
+
+            // Masukkan category_id ke data item, hapus key 'category'
+            $item['category_id'] = $category ? $category->id : null;
+            unset($item['category']);
+
+            // Jika details berupa array, encode jadi JSON string
+            if (isset($item['details']) && is_array($item['details'])) {
+                $item['details'] = json_encode($item['details']);
+            }
+
+            // Simpan item ke database
             Item::create($item);
         }
     }

@@ -16,17 +16,15 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('name');
             $table->enum('status', ['lost', 'found']);
-            $table->string('category')->nullable();
+            $table->foreignId('category_id')->nullable()->constrained('categories')->nullOnDelete();
             $table->date('date');
             $table->string('location');
             $table->text('description')->nullable();
-            $table->string('kontak')->nullable(); // Kolom kontak ditambahkan
+            $table->string('kontak')->nullable(); 
 
-            // Perubahan: Menambahkan kolom baru
-            $table->string('image')->nullable(); // URL atau path gambar
-            $table->json('details')->nullable(); // Detail spesifik seperti plat nomor
+            $table->string('image')->nullable(); 
+            $table->json('details')->nullable(); 
             $table->boolean('is_featured')->default(false); // Untuk fitur pengumuman
-
             $table->timestamps();
         });
     }

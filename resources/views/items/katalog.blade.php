@@ -8,7 +8,7 @@
             <select name="category" onchange="this.form.submit()" class="flex-1 min-w-[180px] rounded shadow bg-gray-700 bg-opacity-70 px-4 py-2">
                 <option value="">Semua Kategori</option>
                 @foreach($categories as $cat)
-                    <option value="{{ $cat }}" {{ request('category') == $cat ? 'selected' : '' }}>{{ $cat }}</option>
+                    <option value="{{ $cat->id }}" {{ request('category') == $cat->id ? 'selected' : '' }}>{{ $cat->name }}</option>
                 @endforeach
             </select>
             <select name="status" onchange="this.form.submit()" class="flex-1 min-w-[150px] rounded shadow bg-gray-700 bg-opacity-70 px-4 py-2">
@@ -20,7 +20,7 @@
             <select name="month" onchange="this.form.submit()" class="flex-1 min-w-[150px] rounded shadow bg-gray-700 bg-opacity-70 px-4 py-2">
                 <option value="">Semua Bulan</option>
                 @for($m=1; $m<=12; $m++)
-                    <option value="{{ $m }}" {{ request('month') == $m ? 'selected' : '' }}>{{ DateTime::createFromFormat('!m', $m)->format('F') }}</option>
+                    <option value="{{ $m }}" {{ request('month') == $m ? 'selected' : '' }}>{{ \DateTime::createFromFormat('!m', $m)->format('F') }}</option>
                 @endfor
             </select>
             <select name="year" onchange="this.form.submit()" class="flex-1 min-w-[150px] rounded shadow bg-gray-700 bg-opacity-70 px-4 py-2">
@@ -38,7 +38,7 @@
                     <img src="{{ $item->image ?? 'https://via.placeholder.com/400x300.png/1a202c/FFFFFF?text=Gambar+Tidak+Tersedia' }}" alt="{{ $item->name }}" class="w-full h-40 object-cover rounded mb-2">
                     <h2 class="font-bold text-lg mb-1">{{ $item->name }}</h2>
                     <p class="text-sm mb-1">Status: <span class="font-semibold">{{ $item->status == 'found' ? 'Ditemukan' : 'Hilang' }}</span></p>
-                    <p class="text-sm mb-1">Kategori: {{ $item->category }}</p>
+                    <p class="text-sm mb-1">Kategori: {{ $item->category ? $item->category->name : '-' }}</p>
                     <p class="text-sm mb-1">
                         @if($item->status == 'found')
                             <span class="font-semibold">Tanggal ditemukan:</span>
