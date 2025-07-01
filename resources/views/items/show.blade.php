@@ -105,7 +105,7 @@
                 <div>
                     <h3 class="font-semibold text-xl mb-1 text-black">Kategori</h3>
                     <span class="px-4 py-2 text-base rounded-full font-medium text-black shadow inline-block {{ $isFound ? 'bg-green-400' : 'bg-yellow-400' }}">
-                        {{ $item->category }}
+                        {{ $item->category ? $item->category->name : '-' }}
                     </span>
                 </div>
             </div>

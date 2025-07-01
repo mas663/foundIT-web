@@ -17,7 +17,7 @@ class Item extends Model
     'location',
     'description',
     'kontak',
-    'category',
+    'category_id',
     'details',
     'image',
     'status',
@@ -31,10 +31,5 @@ class Item extends Model
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');
-    }
-
-    public function messages()
-    {
-        return $this->hasMany(Message::class);
     }
 }

@@ -17,67 +17,47 @@
 
             <form action="{{ route('items.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-
                 <div class="mb-4">
                     <label class="block mb-2">Nama barang</label>
-                    <input type="text" name="name" placeholder="Masukkan nama barang"
-                           class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none" required>
+                    <input type="text" name="name" placeholder="Masukkan nama barang" class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none" required>
                 </div>
-
                 <div class="mb-4">
                     <label class="block mb-2">Tanggal kehilangan</label>
-                    <input type="date" name="date"
-                           class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none" required>
+                    <input type="date" name="date" class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none" required>
                 </div>
-
                 <div class="mb-4">
                     <label class="block mb-2">Lokasi kehilangan</label>
-                    <input type="text" name="location" placeholder="Masukkan lokasi kehilangan"
-                           class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none" required>
+                    <input type="text" name="location" placeholder="Masukkan lokasi kehilangan" class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none" required>
                 </div>
-
                 <div class="mb-4">
                     <label class="block mb-2">Deskripsi</label>
-                    <textarea name="description" placeholder="Deskripsikan barang atau kasus kehilangan"
-                              class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none" required></textarea>
+                    <textarea name="description" placeholder="Deskripsikan barang atau kasus kehilangan" class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none" required></textarea>
                 </div>
-
                 <div class="mb-4">
                     <label class="block mb-2">Link WhatsApp (contoh: https://wa.me/6281234567890)</label>
-                    <input type="url" name="kontak" placeholder="https://wa.me/6281234567890"
-                           class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none" required>
+                    <input type="url" name="kontak" placeholder="https://wa.me/6281234567890" class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none" required>
                 </div>
-
-
                 <div class="mb-4">
                     <label class="block mb-2">Kategori</label>
-                    <select name="category" class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none" required>
+                    <select name="category" id="category" class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none" required>
                         <option value="">Pilih kategori</option>
-                        <option value="Kendaraan">Kendaraan</option>
-                        <option value="Elektronik">Elektronik</option>
-                        <option value="Aksesoris">Aksesoris</option>
-                        <option value="Perlengkapan">Perlengkapan</option>
-                        <option value="Kunci">Kunci</option>
-                        <option value="Dokumen">Dokumen</option>
-                        <option value="Lainnya">Lainnya</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
                     </select>
                 </div>
-
                 <div class="mb-4">
                     <label class="block mb-2">Detail tambahan</label>
-                    <textarea name="details" placeholder="Detail tambahan jika ada"
-                              class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none"></textarea>
+                    <textarea name="details" placeholder="Detail tambahan jika ada" class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none"></textarea>
                 </div>
-
                 <div class="mb-4">
                     <label class="block mb-2">Upload gambar <span class="text-sm">(maksimal 2 MB)</span></label>
-                    <input type="file" name="image" accept="image/*"
-                           class="w-full px-4 py-2 bg-yellow-400 text-gray-900 rounded-md font-semibold cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-gray-900 file:bg-yellow-400 hover:file:bg-yellow-500 transition">
+                    <input type="file" name="image" accept="image/*" class="w-full px-4 py-2 bg-yellow-400 text-gray-900 rounded-md font-semibold cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-gray-900 file:bg-yellow-400 hover:file:bg-yellow-500 transition">
                     @error('image')
                         <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
                     @enderror
                 </div>
-
+                
                 <input type="hidden" name="status" value="lost">
 
                 <button type="submit"

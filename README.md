@@ -1,21 +1,58 @@
-How to run FoundIt on Local
----
-**Requirement**
-- Composer setup
-- Node.js
+# FoundIt - Local Setup Guide
 
-1.  Server:
-    - Jika memakai Xampp, buka dan nyalakan XAMPP
-    - Jika memakai MySQL: 1) start mysql, 2) klik "admin"
+## Requirements
+- [Composer](https://getcomposer.org/)
+- [Node.js](https://nodejs.org/)
 
-2.  Buat database foundit_db
-3.  Jalankan :
-    - composer install
-    - cp .env.example .env (setting nama database, db host, db port, db password)
-    - php artisan key:generate 
-    - php artisan migrate:fresh
-    - php artisan migrate:fresh --seed (buat data dummy)
-    - php artisan serve
-    - php artisan storage:link (upload gambar di lapor)
-    - npm install
-    - npm run dev dan klik link bagian APP_URL
+## 1. Jalankan Server
+
+Pilih salah satu metode:
+
+- **XAMPP**  
+  Buka XAMPP dan nyalakan Apache & MySQL
+
+- **MySQL**  
+  1. Start MySQL  
+  2. Klik "Admin" untuk membuka phpMyAdmin
+
+- **Docker**  
+  Jika menggunakan Docker, gunakan `docker-compose` atau `Dockerfile`
+
+## 2. Buat Database
+  ```bash
+  CREATE DATABASE IF NOT EXISTS `foundit_db` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+  ```
+
+## 3. Install dan Jalankan Aplikasi
+1. Install dependency PHP
+```bash
+  composer install 
+```
+2. Copy konfigurasi environment
+```bash
+  cp .env.example .env
+```
+3. Generate APP_KEY
+```bash
+  php artisan key:generate
+```
+4. Buat data dummy 
+```bash
+  php artisan migrate:fresh --seed
+```
+5. Aktifkan upload foto
+```bash
+  php artisan storage:link
+```
+6. Jalankan backend Laravel
+```bash
+  php artisan serve
+```
+7. Install dependency JS
+```bash
+  npm install
+```
+8. Jalankan frontend Vite
+```bash
+  npm run dev
+``` 
