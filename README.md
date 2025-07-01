@@ -1,4 +1,4 @@
-# FoundIt - Local Setup Guide
+# foundIt - Local Setup Guide
 
 ## Requirements
 - [Composer](https://getcomposer.org/)
